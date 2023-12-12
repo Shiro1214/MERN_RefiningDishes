@@ -1,0 +1,4 @@
+# .gitignore
+
+# Add .env to the ignore list
+.env
