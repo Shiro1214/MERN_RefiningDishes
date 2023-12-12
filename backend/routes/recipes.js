@@ -1,5 +1,5 @@
 const express = require('express')
-
+const Recipe = require('../models/recipeModel')
 const router = express.Router()
 
 // get all recipes
@@ -13,8 +13,15 @@ router.get('/:id', (req, res) => {
 })
 
 // POST a recipe
-router.post('/', (req, res) => {
-    res.json({message: 'Post a recipe'})
+router.post('/', async (req, res) => {
+    const {name, ingredients, instructions} = req.body
+    
+    try {
+        const newRecipe = await Recipe.create({name, ingredients, instructions})
+        res.status(200).json(newRecipe)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
 })
 
 // Delete a recipe
