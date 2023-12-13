@@ -1,37 +1,20 @@
 const express = require('express')
 const Recipe = require('../models/recipeModel')
 const router = express.Router()
-
+const { getRecipes, getRecipe, postRecipe, updateRecipe, deleteRecipe } = require('../controllers/recipeController')
 // get all recipes
-router.get('/', (req, res) => {
-    res.json({message: 'Get all recipes'})
-})
+router.get('/', getRecipes)
 
 // get one recipe
-router.get('/:id', (req, res) => {
-    res.json({message: `Get a recipe `})
-})
+router.get('/:id', getRecipe)
 
 // POST a recipe
-router.post('/', async (req, res) => {
-    const {name, ingredients, instructions} = req.body
-    
-    try {
-        const newRecipe = await Recipe.create({name, ingredients, instructions})
-        res.status(200).json(newRecipe)
-    } catch (error) {
-        res.status(400).json({error: error.message})
-    }
-})
+router.post('/', postRecipe)
 
 // Delete a recipe
-router.delete('/:id', (req, res) => {
-    res.json({message: 'Delete a recipe'})
-})
+router.delete('/:id', deleteRecipe)
 
 // Update a recipe
-router.patch('/:id', (req, res) => {
-    res.json({message: 'Update a recipe'})
-})
+router.patch('/:id', updateRecipe)
 
 module.exports = router
