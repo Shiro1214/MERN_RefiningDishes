@@ -1,0 +1,38 @@
+
+
+  .card {
+    background: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: auto;
+    overflow: wrap;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  .card-content {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card-subtitle {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .card-body {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+  

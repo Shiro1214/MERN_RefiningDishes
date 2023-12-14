@@ -1,0 +1,55 @@
+/* form */
+  .recipeForm {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  .recipeForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  .recipeForm label {
+    font-weight: bold;
+  }
+
+  .recipeForm:hover {
+    border-color: #9ea3a5;
+  }
+  .recipeForm label, input, textarea, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .recipeForm input, textarea {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: wrap;
+  }
+  .recipeForm input:focus, input:hover, textarea:focus, textarea:hover {
+    outline: none;
+    border-color: #57a8ff;
+  
+  }
+  
+  .recipeForm button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    max-width: 25%;
+    margin: 0 auto;
+  }
+  
+  .recipeForm button:hover {
+    background-color: #0056b3;
+  
+  }
+  

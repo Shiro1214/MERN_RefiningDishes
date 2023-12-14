@@ -1,0 +1,21 @@
+.home {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+.home-items {
+    width: 40%;
+
+}
+
+.home-items .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  
+.home-items .pagination button {
+    margin: 10px 10px;
+    width: 20%;
+}
