@@ -27,7 +27,7 @@ code {
   line-height: 1.6;
 }
 
-.error{
+div.error {
   border: 1px solid red;
   background-color: rgb(238, 238, 232);
   color: red;
@@ -35,6 +35,11 @@ code {
   border-radius: 5px;
   margin: 10px;
 }
+
+input.error, textarea.error{ /*select input with class error*/ 
+  border: 1px solid red;
+}
+
 
 .success{
   border: 1px solid green;

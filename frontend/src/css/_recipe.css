@@ -15,6 +15,10 @@
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     cursor: pointer;
   }
+
+  .card:hover .card-title {
+    color: #007bff;
+  }
   .card-content {
     padding: 20px;
   }
@@ -36,3 +40,19 @@
     line-height: 1.4;
   }
   
+  .card-title button {
+    float: right;
+    max-width: 20%;
+    height: 30px;
+    max-height: 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+  }
+
+  .card-title button:hover{
+    background-color: #ce1717;
+    color: white;
+    scale: 1.05;
+  }

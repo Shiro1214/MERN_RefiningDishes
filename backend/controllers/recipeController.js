@@ -30,6 +30,20 @@ const getRecipe = async (req, res) => {
 // POST a recipe
 const postRecipe = async (req, res) => {
     const { name, ingredients, instructions } = req.body
+    const emptyFields = []
+    if (!name) {
+        emptyFields.push('name')
+    }
+    if (!ingredients) {
+        emptyFields.push('ingredients')
+    }
+    if (!instructions) {
+        emptyFields.push('instructions')
+    }
+
+    if (emptyFields.length > 0) {
+        return res.status(400).json({ error: 'Please fill in all the fields', emptyFields })
+    }
     try {
         const newRecipe = await Recipe.create({ name, ingredients, instructions })
         res.status(201).json(newRecipe)
