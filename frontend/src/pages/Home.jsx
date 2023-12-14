@@ -2,25 +2,30 @@ import { useEffect, useState} from "react"
 import RecipeDetails from "../components/RecipeDetails"
 import RecipeForm  from "../components/RecipeForm"
 import Pagination from '@mui/material/Pagination';
+import { useRecipeContext } from "../hooks/useRecipeContext";
 
 function Home() {
-    const [recipes, setRecipes] = useState([])
+    
     const [currentPage, setCurrentPage] = useState(1)
     const itemsPerPage = 4
+    const { recipes, dispatch } = useRecipeContext()
+    //const [numPages, setNumPages] = useState(1)
     useEffect(() => {
         const fetchRecipes = async () => {
             const response = await fetch('api/recipes')
             const data = await response.json() //parse JSON to object
             if (response.ok) {
-                setRecipes(data)
+                dispatch({type: 'SET_RECIPES', payload: data})
+                //setNumPages(Math.ceil(data.length / itemsPerPage))
+                //setRecipes(data)
             }
         }
         fetchRecipes()
     },[])
-    const numPages = Math.ceil(recipes.length / itemsPerPage)
+    
     const indexOfLastItem = currentPage * itemsPerPage
     const indexOfFirstItem = indexOfLastItem - itemsPerPage
-    const currentItems = recipes.slice(indexOfFirstItem, indexOfLastItem)
+    const currentItems = recipes ? recipes.slice(indexOfFirstItem, indexOfLastItem) : null
 
     /*
     const nextPage = () => {
@@ -40,14 +45,11 @@ function Home() {
         <>
         <div className="home">
             <div className="home-items">
-                <div  className="pagination">
-                    <Pagination count={numPages} page = {currentPage} color="primary" onChange={handlePageChange}/>
-                </div>
                 {currentItems && currentItems.map(recipe => (
                     <RecipeDetails key={recipe._id} recipe={recipe}/>
                 ))}
                 <div className="pagination">
-                    <Pagination count={numPages} page = {currentPage} color="primary" onChange={handlePageChange}/>
+                    <Pagination count={recipes ? Math.ceil(recipes.length / itemsPerPage) : 0} page = {currentPage} color="primary" onChange={handlePageChange}/>
                 </div>
             </div>
             <div className="home-items">

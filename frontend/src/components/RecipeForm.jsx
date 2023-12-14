@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-
+import { useRecipeContext } from '../hooks/useRecipeContext';
 function RecipeForm() {
     const [name, setName] = useState("");
     const [ingredients, setIngredients] = useState("");
     const [instructions, setInstructions] = useState("");
     const [error, setError] = useState(null);
-
+    const { dispatch } = useRecipeContext();
     const handleSubmit = async (e) => {
         e.preventDefault()
         const recipe = { name, ingredients, instructions }
@@ -28,6 +28,7 @@ function RecipeForm() {
             setInstructions('')
             setError(null)
             console.log('new recipe added', json)
+            dispatch({ type: 'CREATE_RECIPE', payload: json })
         }
     }
 
