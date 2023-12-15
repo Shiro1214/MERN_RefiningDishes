@@ -18,7 +18,7 @@ function Home() {
             }
         }
         fetchRecipes()
-    },[])
+    },[dispatch])
     
     const handlePageChange = (event, value) => {
         setCurrentPage(value);
@@ -45,7 +45,7 @@ function Home() {
                 </div>
             </div>
             <div className="home-items">
-                <RecipeForm />
+                <RecipeForm type="create" />
             </div>
             
         </div>

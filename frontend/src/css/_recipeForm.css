@@ -24,7 +24,7 @@
     margin-bottom: 10px;
   }
   
-  .recipeForm input, textarea {
+  .recipeForm input, .recipeForm textarea {
     padding: 8px;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -52,3 +52,7 @@
     background-color: #0056b3;
   }
   
+  .recipeForm textarea {
+    resize: none;
+    overflow: hidden;
+  }
