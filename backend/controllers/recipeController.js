@@ -75,7 +75,6 @@ const updateRecipe = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ error: 'Recipe not found' })
     }
-
     try {
         const updatedRecipe = await Recipe.findOneAndUpdate( { _id: id },{ ...req.body}, { new: true }) //spread and update each field
         if (!updatedRecipe) {

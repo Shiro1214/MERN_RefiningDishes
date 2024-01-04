@@ -1,7 +1,7 @@
 @import "./css/home.css";
 @import "./css/_recipeForm.css";
 @import "./css/_recipe.css";
-
+@import "./css/_recipeCooking.css";
 
 body {
   margin: 0;

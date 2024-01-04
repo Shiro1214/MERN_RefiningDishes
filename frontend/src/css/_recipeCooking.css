@@ -1,0 +1,43 @@
+.recipeCookingsContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.recipeCookings{
+    width: 50%;
+    margin: 10% auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.recipeCookingsContent{
+    width: 40%;
+}
+.cooking {
+    width: 100%;
+    background: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: auto;
+}
+
+.cooking .cooking-date {
+    text-align: right;
+    font-weight: bold;
+}
+
+.cooking .cooking-date:hover {
+    color: #007bff;
+}
+
+.cooking:hover {
+    border-color: #9ea3a5;
+    scale: 1.01;
+}

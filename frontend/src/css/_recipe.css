@@ -55,6 +55,9 @@
     scale: 1.05;
     cursor: pointer;
   }
+  .card-title:hover{
+    cursor: pointer;
+  }
 
   .edit-form {
     position: fixed;
