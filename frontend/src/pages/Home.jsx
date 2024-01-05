@@ -11,7 +11,7 @@ function Home() {
     const { recipes, dispatch } = useRecipeContext()
     useEffect(() => {
         const fetchRecipes = async () => {
-            const response = await fetch('api/recipes')
+            const response = await fetch('/api/recipes')
             const data = await response.json() //parse JSON to object
             if (response.ok) {
                 dispatch({type: 'SET_RECIPES', payload: data})
